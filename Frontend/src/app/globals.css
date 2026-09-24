@@ -1,0 +1,375 @@
+/* Fonts (Bodoni Moda, Barlow Condensed, Libre Franklin) load through next/font in app/layout.tsx,
+   which sets --font-display / --font-sign / --font-body. The rest is the design's index.css verbatim:
+   site stylesheet, then the admin portal's extra block. */
+@import 'tailwindcss';
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow: auto;
+  overscroll-behavior-x: none;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-sign: var(--font-sign);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-cobalt: var(--cobalt);
+  --color-on-cobalt: var(--on-cobalt);
+  --color-deep: var(--deep);
+  --color-on-deep: var(--on-deep);
+  --color-line: var(--line);
+  --color-chrome: var(--chrome);
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --font-body: var(--font-body);
+  --font-heading: var(--font-heading);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  /* Crown palette, sampled from the shop floor, chairs and walls */
+  --surface: #f4f7fb;      /* white tile */
+  --surface-2: #dbe5f4;    /* powder-blue walls */
+  --ink: #0f1733;          /* near-navy text */
+  --ink-soft: #37416a;
+  --cobalt: #2344a8;       /* the chairs */
+  --on-cobalt: #f4f7fb;
+  --deep: #14215c;         /* the doors */
+  --on-deep: #e6edf9;
+  --line: rgb(20 33 92 / 0.12);
+  --chrome: #aeb9c9;
+  --tile-a: #2f51b8;
+  --tile-b: #eef3fa;
+  --font-display: 'Bodoni Moda', 'Didot', Georgia, serif;
+  --font-sign: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body: 'Libre Franklin', system-ui, sans-serif;
+  --font-heading: var(--font-display);
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --surface: #0b1230;
+  --surface-2: #16214a;
+  --ink: #eef2fa;
+  --ink-soft: #c2cce6;
+  --cobalt: #7b95f0;
+  --on-cobalt: #0b1230;
+  --deep: #060b22;
+  --on-deep: #e6edf9;
+  --line: rgb(255 255 255 / 0.1);
+  --chrome: #56627f;
+  --tile-a: #1d2c6b;
+  --tile-b: #111a3f;
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior-x: none;
+  }
+}
+
+/* Broken Image Fallback Styles */
+img.broken-image-fallback {
+  position: relative;
+  display: inline-block;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  object-fit: none;
+  object-position: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.dark img.broken-image-fallback {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* ---------- Crown site ---------- */
+:root, .dark {
+  --background: var(--surface);
+  --foreground: var(--ink);
+  --primary: var(--cobalt);
+  --primary-foreground: var(--on-cobalt);
+  --border: var(--line);
+  --ring: var(--cobalt);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html, body { scroll-behavior: smooth; }
+}
+
+::selection { background: var(--cobalt); color: var(--on-cobalt); }
+
+.font-display { font-family: var(--font-display); font-optical-sizing: auto; }
+.font-sign { font-family: var(--font-sign); }
+
+/* The shop floor: blue and white checker tile */
+.checker {
+  background-color: var(--tile-b);
+  background-image: repeating-conic-gradient(var(--tile-a) 0 25%, var(--tile-b) 0 50%);
+  background-size: 72px 72px;
+}
+.checker-sm {
+  background-image: repeating-conic-gradient(var(--tile-a) 0 25%, var(--tile-b) 0 50%);
+  background-size: 28px 28px;
+}
+
+@keyframes floor-roll {
+  from { background-position: 0 -288px; }
+  to { background-position: 0 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .floor-roll { animation: floor-roll 1.6s cubic-bezier(0.23, 1, 0.32, 1) both; }
+}
+
+/* Price board dot leaders */
+.leader {
+  flex: 1;
+  min-width: 1.5rem;
+  border-bottom: 2px dotted color-mix(in srgb, var(--on-deep) 35%, transparent);
+  transform: translateY(-0.35em);
+}
+
+.press { transition: transform 160ms var(--ease-out-strong), background-color 200ms ease, color 200ms ease, box-shadow 200ms ease; }
+.press:active { transform: scale(0.97); }
+
+:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 3px; }
+
+section[id] { scroll-margin-top: 96px; }
+
+.dark { color-scheme: dark; }
+a, button, [role="tab"], [role="radio"] { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+
+/* Barber pole in Crown blue */
+.pole-stripe {
+  background-image: repeating-linear-gradient(-45deg, var(--tile-a) 0 14px, var(--on-deep) 14px 28px);
+}
+
+html { font-size: 100%; }
+body { line-height: 1.6; }
+
+/* Page headings receive focus on page change for screen readers; no visible ring needed there */
+[tabindex="-1"]:focus, [tabindex="-1"]:focus-visible { outline: none; }
+
+/* Angled top edge for the navy "feature" sections: the section overlaps the one above,
+   so the slant shows that section's colour instead of a gap. */
+.slant-top {
+  position: relative;
+  z-index: 1;
+  margin-top: -3.5vw;
+  padding-top: calc(6rem + 3.5vw);
+  clip-path: polygon(0 3.5vw, 100% 0, 100% 100%, 0 100%);
+}
+@media (min-width: 768px) {
+  .slant-top { padding-top: calc(8rem + 3.5vw); }
+}
+
+/* sideways scrollers on phones (reviews, gallery filters) */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ---------- from the admin design's index.css ---------- */
+/* Chart bar color, validated with the dataviz palette checker for each mode */
+:root { --chart-bar: #3d5fcf; }
+.dark { --chart-bar: #5a78e0; }
+body { background: var(--surface); }
+
+/* ---------- Admin design tokens (neutral dashboard, brand blue as accent) ---------- */
+@theme inline {
+  --color-canvas: var(--a-canvas);
+  --color-panel: var(--a-panel);
+  --color-sunken: var(--a-sunken);
+  --color-stroke: var(--a-stroke);
+  --color-stroke-strong: var(--a-stroke-strong);
+  --color-fg: var(--a-fg);
+  --color-fg-muted: var(--a-fg-muted);
+  --color-fg-subtle: var(--a-fg-subtle);
+  --color-accent: var(--a-accent);
+  --color-accent-hover: var(--a-accent-hover);
+  --color-accent-fg: var(--a-accent-fg);
+  --color-accent-soft: var(--a-accent-soft);
+}
+:root {
+  --a-canvas: #eef2f8;
+  --a-panel: #ffffff;
+  --a-sunken: #f4f7fb;
+  --a-stroke: #dfe5ee;
+  --a-stroke-strong: #cfd4dc;
+  --a-fg: #101828;
+  --a-fg-muted: #475467;
+  --a-fg-subtle: #667085;
+  --a-accent: #2344a8;
+  --a-accent-hover: #1b3689;
+  --a-accent-fg: #ffffff;
+  --a-accent-soft: #eef2fb;
+}
+.dark {
+  --a-canvas: #0b0e15;
+  --a-panel: #121722;
+  --a-sunken: #0f131c;
+  --a-stroke: #222a3a;
+  --a-stroke-strong: #2f394d;
+  --a-fg: #e7eaf0;
+  --a-fg-muted: #a3acbd;
+  --a-fg-subtle: #7e889b;
+  --a-accent: #7b95f0;
+  --a-accent-hover: #93a9f4;
+  --a-accent-fg: #0b0e15;
+  --a-accent-soft: #1a2240;
+}
+.admin {
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'tnum' 0;
+}
+.admin .num { font-variant-numeric: tabular-nums; }
+.admin :focus-visible { outline: 2px solid var(--a-accent); outline-offset: 2px; }
+
+/* Page titles get focus on screen change for screen readers; no ring needed there */
+.admin [tabindex="-1"]:focus, .admin [tabindex="-1"]:focus-visible { outline: none; }
+/* Section/panel headings stay in the UI font; only page titles use the shop serif */
+.admin h2, .admin h3, .admin h4 { font-family: inherit; }

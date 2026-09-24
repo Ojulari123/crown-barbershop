@@ -1,0 +1,304 @@
+{
+  "target": "magicpath",
+  "siteUrl": "https://api.magicpath.ai/v1/bold-shade-8845",
+  "adminUrl": "https://api.magicpath.ai/v1/gladly-cliff-2542",
+  "frozenTime": "2026-09-25T10:15:00-04:00",
+  "capturedAt": "2026-09-24T09:46:46.210Z",
+  "results": [
+    {
+      "file": "admin-bookings-drawer@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-bookings-drawer@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-bookings-past@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-bookings-past@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-bookings-upcoming@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-bookings-upcoming@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-bookings@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-bookings@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-gallery@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-gallery@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-hours@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-hours@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-login@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-login@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-messages@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-messages@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-prices@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-prices@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-settings@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-settings@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-team@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-team@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-today@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "admin-today@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-404@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-404@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-about@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-about@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-book-1-service@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-book-1-service@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-book-2-barber@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-book-2-barber@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-book-3-day@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-book-3-day@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-book-4-time@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-book-4-time@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-book-5-details@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-book-5-details@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-book-6-done@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-book-6-done@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-book@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-book@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-gallery@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-gallery@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-home@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-home@1440.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-home@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-home@768.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-lightbox@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-lightbox@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-menu-open@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-prices-shaves@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-prices-shaves@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-prices@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-prices@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-visit-faq2@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-visit-faq2@390.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-visit@1280.png",
+      "ok": true,
+      "stable": true
+    },
+    {
+      "file": "site-visit@390.png",
+      "ok": true,
+      "stable": true
+    }
+  ]
+}

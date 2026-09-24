@@ -1,0 +1,19 @@
+{
+  "name": "crown-fidelity",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "capture": "tsx capture.ts",
+    "compare": "tsx compare.ts",
+    "fonts": "tsx fonts-check.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/pngjs": "^6.0.5",
+    "pixelmatch": "7.2.0",
+    "playwright": "1.62.0",
+    "pngjs": "7.0.0",
+    "tsx": "4.23.15",
+    "typescript": "^5.6.0"
+  }
+}

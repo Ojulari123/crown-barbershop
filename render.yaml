@@ -1,0 +1,64 @@
+# Render Blueprint: the Crown API (FastAPI) as one web service.
+# Frontend is on Vercel and the database on Neon; see README.md "Deploy".
+#
+# One instance only: APScheduler runs the SMS outbox and the 9 AM reminder inside the web
+# process, so a second instance would send every text twice.
+services:
+  - type: web
+    name: crown-api
+    runtime: python
+    rootDir: Backend
+    plan: starter
+    numInstances: 1
+    buildCommand: pip install -r requirements.txt
+    # Migrations are plain SQL (idempotent: applied files are skipped). seed.py only inserts
+    # what is missing (services, barbers, hours/shop_settings, the owner), never overwrites.
+    startCommand: python migrate.py up && python seed.py && uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: ENV
+        value: production
+      # Neon direct (non-pooled) URL with ?sslmode=require. migrate.py holds a session-level
+      # advisory lock, which the pooled (PgBouncer transaction-mode) endpoint does not support.
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      # https://<your-vercel-domain>, no trailing slash (CORS + the link in the shop's SMS)
+      - key: FRONTEND_ORIGIN
+        sync: false
+      - key: COOKIE_SECURE
+        value: "1"
+      # Requests arrive through Vercel's rewrite and Render's proxy: rate-limit on the first
+      # X-Forwarded-For hop (the visitor), not the proxy address.
+      - key: TRUST_PROXY
+        value: "1"
+      # 1 = client demo: enables "Reset demo data" and forces SMS dry run. Set 0 to go live.
+      - key: DEMO_MODE
+        value: "1"
+      # Owner account created by seed.py on first start (required unless it already exists).
+      - key: CROWN_OWNER_EMAIL
+        sync: false
+      - key: CROWN_OWNER_PASSWORD
+        sync: false
+      - key: CROWN_OWNER_NAME
+        sync: false
+      # Twilio: leave blank for dry run (texts are written to the log instead of sent).
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: TWILIO_FROM_NUMBER
+        sync: false
+      - key: CROWN_SHOP_SMS_TO
+        sync: false
+      # Cloudinary: needed in production. Render's disk is wiped on every deploy, so local
+      # media uploads would disappear.
+      - key: CROWN_CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CROWN_CLOUDINARY_API_KEY
+        sync: false
+      - key: CROWN_CLOUDINARY_API_SECRET
+        sync: false
